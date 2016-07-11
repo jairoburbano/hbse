@@ -1,0 +1,46 @@
+/*------------------------------------*\
+$RESULT
+\*------------------------------------*/
+.no-touch {
+    .result {
+        .result__item {
+            a {
+                &:hover {
+                    color: $maindark;
+                }
+            }
+        }
+    }
+}
+.result {
+    max-width: 470px;
+    margin: auto;
+    .wrap {
+        @include respond-to(desktop) {
+            padding: 0;
+        }
+    }
+    .title {
+        margin-top: 0;
+    }
+    .number {
+        @inlcude font-size(17px, 26px);
+        color: #666;
+        text-align: center;
+        margin: 20px 0 10px;
+    }
+    .result__item {
+        padding: 15px 0 10px;
+        border-bottom: 1px solid $border;
+        a {
+            @include font-size(18px, 26px);
+            color: $main;
+            transition: all 300ms;
+        }
+        .breadcrumb {
+            color: $gray;
+            @include font-size(14px, 20px);
+        }
+    }
+
+}

@@ -1,0 +1,135 @@
+/*------------------------------------*\
+$BRANDS
+\*------------------------------------*/
+.no-touch {
+    .brands {
+        .brands__list {
+            li {
+                .brand__list__image {
+                    &:hover {
+                        filter: grayscale(0);
+                    }
+                }
+            }
+        }
+        .flex-direction-nav {
+            li {
+                &:hover {
+                    svg {
+                        stroke: $principal;
+                    }
+                }
+            }
+        }
+    }
+}
+.brand-container {
+    padding: 20px 20px 5px;
+    border-top: 1px solid $border;
+    @include respond-to(desktop) {
+        padding-top: 70px;
+        padding-bottom: 50px;
+    }
+    h2 {
+        @include font-size(22px, 26px);
+        text-align: center;
+        color: $main;
+        margin-bottom: 40px;
+    }
+}
+.brands {
+    position: relative;
+    max-width: 1000px;
+    margin: auto;
+    .brands__list {
+        li {
+            width: 100%;
+            display: flex !important;
+            flex-flow: row wrap;
+            justify-content: center;
+            .brand__list__image {
+                width: (100% / 3);
+                height: 56px;
+                filter: grayscale(100%);
+                transition: all 300ms;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                position: relative;
+                margin-bottom: 18px;
+                padding: 0 3px;
+                @include respond-to(tablet) {
+                    width: (100% / 6);
+                    height: 70px;
+                    padding: 0 6px;
+                }
+                @include respond-to(desktop) {
+                    height: 90px;
+                    padding: 0 14px;
+                }
+                img {
+                    max-height: 100%;
+                    display: block;
+                    @-moz-document url-prefix() { 
+                        flex-basis: 100%;
+                    }
+                }
+            }
+        }
+    }
+    .flex-control-nav {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        left: 0;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        @include respond-to(desktop) {
+            bottom: -20px;
+        }
+        li {
+            width: 6px;
+            height: 6px;
+            margin: 0 3px;
+            a {
+                background: $main10;
+                @include font-size(2px, 6px);
+                color: $border;
+                display: block;
+                transition: all 300ms;
+                border-radius: 3px;
+                text-indent: -9999px;
+                &.flex-active {
+                    background: $principal;
+                    color: $principal;
+                }
+            }
+        }
+    }
+    .flex-direction-nav {
+        @include center;
+        width: 100%;
+        .flex-nav-prev, .flex-nav-next {
+            position: absolute;
+            left: -11px;
+            top: 50%;
+            transform: translate(0, -17px);
+            @include respond-to(tablet) {
+                left: -22px;
+            }
+        }
+        .flex-nav-next {
+            left: auto;
+            right: -11px;@include respond-to(tablet) {
+                right: -22px;
+            }
+        }
+        svg {
+            stroke: $border;
+            width: 11px;
+            height: 15px;
+            transition: all 300ms;
+        }
+    }
+}

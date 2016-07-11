@@ -1,0 +1,46 @@
+/*------------------------------------*\
+$INGENIERIA
+\*------------------------------------*/
+.ingenieria {
+    .title {
+        width: 200px;
+        margin: 20px auto 0;
+        @include respond-to(tablet) {
+            width: 100%;
+        }
+        @include respond-to(desktop) {
+            margin-top: 60px;
+        }
+    }
+    .bajada {
+        margin-top: 15px;
+        padding: 0 20px;
+        max-width: 520px;
+        margin: 6px auto 0;
+        @include respond-to(tablet) {
+            margin-top: 20px;
+        }
+        @include respond-to(desktop) {
+            margin-top: 40px;
+            margin-bottom: 50px;
+            max-width: 650px;
+        }
+        p {
+            @include font-size(17px, 26px);
+            margin-bottom: 20px;
+            color: #666;
+            display: block;
+            &:last-child {
+                margin-bottom: 30px;
+            }
+        }
+    }
+    .nosotros--box {
+        .nosotros__item {
+            background: $border;
+            &:nth-child(2n) {
+                background: white;
+            }
+        }
+    }
+}

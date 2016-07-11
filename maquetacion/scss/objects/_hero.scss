@@ -1,0 +1,32 @@
+/*------------------------------------*\
+$HERO
+\*------------------------------------*/
+.error404 {
+    background-size: cover;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    .content {
+        @include center;
+        width: 280px;
+        text-align: center;
+        margin-top: -50px;
+        color: white;
+        @include respond-to(tablet) {
+            width: 480px;
+        }
+        h1 {
+            @include font-size(22px, 26px);
+            margin-bottom: 10px;
+            @include respond-to(tablet) {
+                @include font-size(28px, 32px);
+            }
+        }
+        p {
+            @include font-size(17px, 26px);
+        }
+    }
+}

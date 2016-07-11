@@ -1,0 +1,58 @@
+/*------------------------------------*\
+$FOOTER
+\*------------------------------------*/
+.site-footer {
+    background: #e7e9f0;
+    padding: 9px 0;
+    .wrap {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .item__footer {
+        position: relative;
+        min-height: 30px;
+        @include font-size(13px, 15px);
+        margin: 6px 0;
+        @include respond-to(tablet) {
+            width: 250px;
+        }
+        .center {
+            position: absolute;
+            left: 35px;
+            top: 50%;
+            transform: translate(0, -50%);
+            color: $principal;
+            a {
+                color: $principal;
+            }
+        }
+        .icon {
+            svg {
+                width: 30px;
+                height: 30px;
+                fill: $maindark;
+            }
+        }
+    }
+    .column {
+        width: 100%;
+        @include respond-to(tablet) {
+            width: 240px;
+            display: flex;
+            flex-flow: row wrap;
+        }
+        &.column--last {
+            @include respond-to(tablet) {
+                width: 460px;
+                justify-content: space-between;
+            }
+            .item__footer {
+                @include respond-to(tablet) {
+                    width: 150px;
+                }   
+            }
+        }
+    }
+}

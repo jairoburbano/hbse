@@ -1,0 +1,106 @@
+/*------------------------------------*\
+$BTN
+\*------------------------------------*/
+.no-touch {
+    .btn--read, .btn--icon {
+        &:hover {
+            background: $main;
+            color: white;
+            span {
+                background: $maindark;
+            }
+        }
+    }
+}
+.btn--read {
+    width: 168px;
+    height: 40px;
+    position: relative;
+    margin: auto;
+    border-radius: 4px;
+    padding-left: 40px;
+    text-align: center;
+    @include font-size(12px, 40px);
+    color: $principal;
+    background: white;
+    display: block;
+    margin-top: 16px;
+    transition: all 300ms;
+    @include respond-to(tablet) {
+        @include font-size(15px, 50px);
+        width: 210px;
+        height: 50px;
+    }
+    span {
+        position: absolute;
+        top: 0;
+        left: -1px;
+        width: 40px;
+        height: 40px;
+        border-bottom-left-radius: 4px;
+        border-top-left-radius: 4px;
+        background: $main;
+        transition: all 300ms;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        @include respond-to(tablet) {
+            width: 50px;
+            height: 50px;
+        }
+        svg {
+            width: 22.4px;
+            height: 22.4px;
+            fill: white;
+        }
+    }
+}
+.btn--icon {
+    width: 140px;
+    height: 26px;
+    position: relative;
+    margin: auto;
+    border-radius: 4px;
+    padding-left: 26px;
+    text-align: center;
+    @include font-size(14px, 26px);
+    color: $principal;
+    background: white;
+    display: block;
+    margin-top: 16px;
+    background: $border;
+    display: block;
+    margin-top: 10px;
+    transition: all 300ms;
+
+    &.mobile {
+        display: block;
+        @include respond-to(tablet) {
+            display: none;
+        }
+    }
+    &.no-mobile {
+        display: none;
+        @include respond-to(tablet) {
+            display: block;
+        }
+    }
+    span {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 26px;
+        height: 26px;
+        border-bottom-left-radius: 4px;
+        border-top-left-radius: 4px;
+        background: $main;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        svg {
+            width: 16px;
+            height: 16px;
+            fill: white;
+        }
+    }
+}

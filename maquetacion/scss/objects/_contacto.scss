@@ -1,0 +1,311 @@
+/*------------------------------------*\
+$CONTACTO
+\*------------------------------------*/
+.no-touch {
+    .contacto {
+        .form--contact {
+            .send__group {
+                .send {
+                    &:hover {
+                        .icon {
+                            background: $maindark;
+                        }
+                        input {
+                            background: $main;
+                            color: white;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.lightbox-message {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(#fff, .7);
+    z-index: $level11;
+    display: none;
+    .content__lightbox {
+        max-width: 300px;
+        width: 90%;
+        height: auto;
+        margin: auto;
+        @include center;
+        .content__lightbox__text {
+            background: #0338b2;
+            padding: 15px;
+            border-radius: 5px;
+            text-align: center;
+            color: white;
+            &.problem {
+                background: #f8a73c;
+            }
+        }
+    }
+}
+.contacto {
+    .form--contact {
+        padding: 0 20px;
+        width: 320px;
+        margin: auto;
+        margin-top: 20px;
+        @include respond-to(tablet) {
+            width: 406px;
+        }
+        .input-group {
+            width: 100%;
+            height: 40px;
+            display: flex;
+            flex-flow: row wrap;
+            margin-bottom: 20px;
+            position: relative;
+            &.big {
+                height: 100px;
+                label {
+                    height: 100px;
+                    padding: 13px 10px;
+                }
+                textarea {
+                    height: 100px;
+                    @include font-size(14px, 16px);
+                    padding: 10px;
+                    resize: none;
+                }
+            }
+            &.done {
+                label {
+                    background: #0338b2;
+                    color: white;
+                }
+                input, textarea, .style-select {
+                    border: 1px solid #0338b2;
+                }
+            }
+            &.error {
+                label {
+                    background: #f8a73c;
+                    color: white;
+                }
+                input, textarea, .style-select {
+                    border: 1px solid #f8a73c;
+                }
+            }
+            p.error {
+                position: absolute;
+                left: 10px;
+                top: -16px;
+                @include font-size(12px, 22px);
+                background: #d86c22;
+                color: white;
+                border-radius: 5px;
+                padding: 0 5px;
+                &::after {
+                    content: '';
+                    position: absolute;
+                    bottom: -5px;
+                    left: 5px;
+                    width: 0;
+                    height: 0;
+                    border-style: solid;
+                    border-width: 5px 2.5px 0 2.5px;
+                    border-color: #d86c22 transparent transparent transparent;
+                }
+            }
+            label {
+                width: 84px;
+                border-top-left-radius: 5px;
+                border-bottom-left-radius: 5px;
+                background: $border;
+                @include font-size(14px, 14px);
+                position: relative;
+                display: block;
+                height: 40px;
+                transition: all 300ms;
+                @include respond-to(tablet) {
+                    width: 130px;
+                }
+                span {
+                    position: absolute;
+                    left: 10px;
+                    top: 50%;
+                    transform: translate(0, -50%);
+                }
+            }
+            input, .style-select, textarea {
+                width: calc(100% - 84px);
+                border: 1px solid $border;
+                border-top-right-radius: 5px;
+                border-bottom-right-radius: 5px;
+                padding: 0 10px;
+                @include font-size(14px, 26px);
+                transition: all 300ms;
+                @include respond-to(tablet) {
+                    width: calc(100% - 130px);
+                }
+                &:focus {
+                    outline: none;
+                }
+            }
+            .style-select {
+                padding: 0;
+                position: relative;
+                p.error {
+                    left: -74px;
+                    @include respond-to(tablet) {
+                        left: -120px;
+                    }
+                }
+                svg {
+                    width: 15px;
+                    height: 15px;
+                    fill: $main;
+                    position: absolute;
+                    top: 50%;
+                    right: 10px;
+                    transform: translate(0, -50%);
+                    z-index: $level1;
+                }
+            }
+            select {
+                width: 100%;
+                height: 40px;
+                background-color: transparent;
+                border: none;
+                appearance:none;
+                position: relative;
+                z-index: $level2;
+                @include font-size(14px, 26px);
+                padding: 0 10px;
+                &:focus {
+                    outline: none;
+                }
+            }
+        }
+        .send__group {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-between;
+            p {
+                width: 70px;
+                @include font-size(12px, 16px);
+                color: $gray;
+            }
+            .send {
+                width: 180px;
+                height: 40px;
+                @include font-size(15px, 40px);
+                position: relative;
+                text-align: center;
+                border-radius: 5px;
+                overflow: hidden;
+                input {
+                    padding-left: 40px;
+                    width: 100%;
+                    height: 40px;
+                    background: $border;
+                    border: none;
+                    transition: all 300ms;
+                }
+                .icon {
+                    width: 40px;
+                    height: 40px;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    background: $main;
+                    transition: all 300ms;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    svg {
+                        width: 16.5px;
+                        height: 16.5px;
+                        fill: white;
+                    }
+                }
+            }
+        }
+    }
+}
+.direccion {
+    width: 100%;
+    border-top: 1px solid $border;
+    margin-top: 20px;
+    @include respond-to(tablet) {
+        display: flex;
+        flex-flow: row wrap;
+        padding: 0 20px;
+        border-top: none;
+        max-width: 1000px;
+        margin: 40px auto 0;
+    }
+    @include respond-to(desktop) {
+        margin: 60px auto 0;
+    }
+    #map {
+        display: none;
+        @include respond-to(tablet) {
+            display: block;
+            width: 100%;
+            height: 300px;
+        }
+        @include respond-to(desktop) {
+            height: 400px;
+        }
+    }
+    .direccion__item {
+        @include font-size(14px, 18px);
+        color: $gray;
+        text-align: center;
+        width: 280px;
+        margin: auto;
+        border-bottom: 1px solid $border;
+        padding: 20px 0;
+        @include respond-to(tablet) {
+            width: 50%;
+            border-bottom: none;
+        }
+        p {
+            width: 220px;
+            margin: auto;
+        }
+        &:last-child {
+            border-bottom: none;
+        }
+    }
+}
+.marker {
+    background: $maindark;
+    height: 54px;
+    border-radius: 27px;
+    width: 280px;
+    position: relative;
+    padding: 10px 0 10px 50px;
+    &::after {
+        content: '';
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 7px 4.5px 0 4.5px;
+        border-color: $maindark transparent transparent transparent;
+        position: absolute;
+        bottom: -6px;
+        left: 24px;
+    }
+    svg {
+        position: absolute;
+        top: 50%;
+        left: 15px;
+        transform: translate(0, -50%);
+        width: 22px;
+        height: 22px;
+    }
+    p {
+        @include font-size(14px, 18px);
+        color: white;
+    }
+}
